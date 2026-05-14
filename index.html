@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal portfolio and link hub for Evan." />
+  <title>Evan's Corner of the Web</title>
+  <style>
+    :root {
+      --bg: #0b6e69;
+      --window: #c0c0c0;
+      --window-light: #ffffff;
+      --window-mid: #dfdfdf;
+      --window-dark: #808080;
+      --window-deep: #404040;
+      --title: #000080;
+      --text: #111111;
+      --link: #0000ee;
+      --sticky-yellow: #fff6a5;
+      --sticky-pink: #ffd4ec;
+      --sticky-blue: #cde9ff;
+      --sticky-green: #d7ffd2;
+      --paper: #fffdf0;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.08), transparent 20rem),
+        linear-gradient(135deg, #0b6e69, #093f5f 70%);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    a:focus,
+    button:focus {
+      outline: 2px dotted #000;
+      outline-offset: 2px;
+    }
+
+    .desktop {
+      width: min(1180px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 92px;
+      position: relative;
+    }
+
+    .desktop-icons {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(70px, 1fr));
+      gap: 12px;
+      max-width: 430px;
+      margin-bottom: 18px;
+    }
+
+    .desktop-icon {
+      color: #fff;
+      text-align: center;
+      text-shadow: 1px 1px 0 #000;
+      font-size: 0.78rem;
+      user-select: none;
+    }
+
+    .icon-art {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 38px;
+      margin: 0 auto 5px;
+      border: 2px solid #fff;
+      background: #dcdcdc;
+      color: #111;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.35);
+      text-shadow: none;
+      font-size: 1.35rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .window {
+      background: var(--window);
+      border-top: 2px solid var(--window-light);
+      border-left: 2px solid var(--window-light);
+      border-right: 2px solid var(--window-deep);
+      border-bottom: 2px solid var(--window-deep);
+      box-shadow: 10px 10px 0 var(--shadow);
+    }
+
+    .title-bar {
+      min-height: 28px;
+      padding: 3px 5px 3px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #fff;
+      background: linear-gradient(90deg, var(--title), #1084d0);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.01em;
+    }
+
+    .window-buttons {
+      display: flex;
+      gap: 3px;
+    }
+
+    .window-button {
+      width: 20px;
+      height: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--window);
+      color: #111;
+      border-top: 2px solid var(--window-light);
+      border-left: 2px solid var(--window-light);
+      border-right: 2px solid var(--window-deep);
+      border-bottom: 2px solid var(--window-deep);
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+
+    .window-body {
+      padding: 18px;
+    }
+
+    .hero {
+      min-height: 400px;
+      position: relative;
+      background:
+        linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
+        repeating-linear-gradient(0deg, transparent 0 23px, rgba(0,0,0,0.08) 24px),
+        repeating-linear-gradient(90deg, transparent 0 23px, rgba(0,0,0,0.08) 24px);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 8px;
+      padding: 3px 7px;
+      background: #000;
+      color: #00ff66;
+      font-family: "Courier New", monospace;
+      font-size: 0.78rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 5.6rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      max-width: 760px;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 16px 0 0;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      line-height: 1.5;
+      background: rgba(255,255,255,0.7);
+      padding: 10px 12px;
+      border-left: 5px solid #000080;
+    }
+
+    .marquee {
+      margin: 18px 0 0;
+      padding: 7px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      color: #fff;
+      background: #111;
+      border: 2px inset var(--window);
+      font-family: "Courier New", monospace;
+    }
+
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 18s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .sticky-board {
+      position: relative;
+      min-height: 305px;
+      margin-top: 22px;
+    }
+
+    .sticky {
+      width: min(255px, 75vw);
+      padding: 14px 14px 16px;
+      position: absolute;
+      border: 1px solid rgba(0,0,0,0.2);
+      box-shadow: 4px 5px 0 rgba(0,0,0,0.18);
+      font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+      line-height: 1.35;
+    }
+
+    .sticky strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.78rem;
+    }
+
+    .sticky.one {
+      top: 0;
+      left: 0;
+      background: var(--sticky-yellow);
+      transform: rotate(-2deg);
+    }
+
+    .sticky.two {
+      top: 42px;
+      left: min(285px, 44vw);
+      background: var(--sticky-pink);
+      transform: rotate(3deg);
+    }
+
+    .sticky.three {
+      top: 158px;
+      left: min(150px, 24vw);
+      background: var(--sticky-blue);
+      transform: rotate(-4deg);
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 18px;
+    }
+
+    .profile-card {
+      background: var(--paper);
+    }
+
+    .avatar {
+      width: 116px;
+      height: 116px;
+      margin: 0 auto 12px;
+      display: grid;
+      place-items: center;
+      border-radius: 4px;
+      background:
+        linear-gradient(45deg, #000 25%, transparent 25% 75%, #000 75%),
+        linear-gradient(45deg, #000 25%, transparent 25% 75%, #000 75%);
+      background-size: 18px 18px;
+      background-position: 0 0, 9px 9px;
+      border: 3px double #000;
+      color: #fff;
+      font-size: 2.3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 0 #000;
+    }
+
+    .profile-card h2,
+    section h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+    }
+
+    .profile-card p {
+      margin: 0 0 14px;
+      line-height: 1.45;
+    }
+
+    .status {
+      padding: 9px 10px;
+      background: #e7ffe7;
+      border: 1px dashed #008000;
+      font-size: 0.9rem;
+    }
+
+    .button-grid {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .retro-button {
+      display: block;
+      padding: 9px 10px;
+      color: #111;
+      text-decoration: none;
+      text-align: center;
+      background: var(--window);
+      border-top: 2px solid var(--window-light);
+      border-left: 2px solid var(--window-light);
+      border-right: 2px solid var(--window-deep);
+      border-bottom: 2px solid var(--window-deep);
+      font-weight: 700;
+    }
+
+    .retro-button:hover {
+      background: #d7d7d7;
+    }
+
+    .retro-button:active {
+      border-top-color: var(--window-deep);
+      border-left-color: var(--window-deep);
+      border-right-color: var(--window-light);
+      border-bottom-color: var(--window-light);
+    }
+
+    section {
+      margin-top: 22px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .project-card {
+      padding: 14px;
+      background: #fff;
+      border: 2px inset var(--window);
+    }
+
+    .project-card h3 {
+      margin: 0 0 7px;
+      font-size: 1rem;
+    }
+
+    .project-card p {
+      margin: 0 0 10px;
+      line-height: 1.45;
+      font-size: 0.94rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      padding: 3px 6px;
+      background: #ffffcc;
+      border: 1px solid #999;
+      font-family: "Courier New", monospace;
+      font-size: 0.76rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline-item {
+      padding: 11px 12px;
+      background: #f8f8f8;
+      border-left: 5px solid #000080;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.12);
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    footer {
+      margin-top: 26px;
+      text-align: center;
+      color: #fff;
+      text-shadow: 1px 1px 0 #000;
+      font-size: 0.9rem;
+    }
+
+    .taskbar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 5px 8px;
+      background: var(--window);
+      border-top: 2px solid var(--window-light);
+      box-shadow: 0 -2px 0 var(--window-dark);
+    }
+
+    .start-button,
+    .task-pill,
+    .clock {
+      background: var(--window);
+      border-top: 2px solid var(--window-light);
+      border-left: 2px solid var(--window-light);
+      border-right: 2px solid var(--window-deep);
+      border-bottom: 2px solid var(--window-deep);
+    }
+
+    .start-button {
+      padding: 6px 12px;
+      font-weight: 800;
+    }
+
+    .task-pill {
+      flex: 1;
+      max-width: 420px;
+      padding: 6px 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .clock {
+      margin-left: auto;
+      padding: 6px 10px;
+      font-family: "Courier New", monospace;
+    }
+
+    @media (max-width: 860px) {
+      .layout,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .desktop-icons {
+        grid-template-columns: repeat(2, minmax(70px, 1fr));
+      }
+
+      .sticky-board {
+        display: grid;
+        gap: 12px;
+        min-height: auto;
+      }
+
+      .sticky {
+        position: static;
+        width: auto;
+        transform: none !important;
+      }
+
+      .task-pill {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .marquee span {
+        animation: none;
+        padding-left: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="desktop">
+    <nav class="desktop-icons" aria-label="Page shortcuts">
+      <a class="desktop-icon" href="#about">
+        <span class="icon-art">👤</span>
+        About.txt
+      </a>
+      <a class="desktop-icon" href="#projects">
+        <span class="icon-art">💾</span>
+        Projects
+      </a>
+      <a class="desktop-icon" href="#links">
+        <span class="icon-art">🌐</span>
+        Links.url
+      </a>
+      <a class="desktop-icon" href="#contact">
+        <span class="icon-art">✉️</span>
+        Contact
+      </a>
+    </nav>
+
+    <div class="layout">
+      <article class="window hero" id="about">
+        <div class="title-bar">
+          <span>evan.exe</span>
+          <span class="window-buttons" aria-hidden="true">
+            <span class="window-button">_</span>
+            <span class="window-button">□</span>
+            <span class="window-button">×</span>
+          </span>
+        </div>
+        <div class="window-body">
+          <p class="eyebrow">ONLINE // BUILDING THINGS</p>
+          <h1>Evan's corner of the web.</h1>
+          <p class="subtitle">
+            A personal GitHub Pages site for links, projects, notes, and whatever else deserves a tiny early-internet shrine.
+          </p>
+
+          <div class="marquee" aria-label="Scrolling announcement">
+            <span>currently learning • building projects • tuning the portfolio • probably overthinking the CSS •</span>
+          </div>
+
+          <div class="sticky-board" aria-label="Sticky notes">
+            <div class="sticky one">
+              <strong>Now</strong>
+              Replace this with what you are currently working on: a class project, portfolio build, modpack, script, or research topic.
+            </div>
+            <div class="sticky two">
+              <strong>Looking for</strong>
+              Internship / entry-level software engineering opportunities, especially projects where I can build useful tools.
+            </div>
+            <div class="sticky three">
+              <strong>Note to self</strong>
+              Add screenshots, live demos, and short writeups for each project. Recruiters skim fast.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <section class="window profile-card">
+          <div class="title-bar">
+            <span>profile.ini</span>
+            <span class="window-buttons" aria-hidden="true">
+              <span class="window-button">?</span>
+            </span>
+          </div>
+          <div class="window-body">
+            <div class="avatar" aria-hidden="true">EH</div>
+            <h2>Hi, I'm Evan.</h2>
+            <p>
+              I like clean tools, weird web aesthetics, and projects that are useful enough to keep around.
+            </p>
+            <div class="status"><strong>Status:</strong> customizing this site.</div>
+          </div>
+        </section>
+
+        <section class="window" id="links">
+          <div class="title-bar">
+            <span>links.html</span>
+            <span class="window-buttons" aria-hidden="true">
+              <span class="window-button">×</span>
+            </span>
+          </div>
+          <div class="window-body">
+            <h2>Links</h2>
+            <div class="button-grid">
+              <a class="retro-button" href="https://github.com/YOUR-USERNAME">GitHub</a>
+              <a class="retro-button" href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a>
+              <a class="retro-button" href="mailto:your.email@example.com">Email</a>
+              <a class="retro-button" href="resume.pdf">Resume PDF</a>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <section class="window" id="projects">
+      <div class="title-bar">
+        <span>projects_folder</span>
+        <span class="window-buttons" aria-hidden="true">
+          <span class="window-button">_</span>
+          <span class="window-button">□</span>
+          <span class="window-button">×</span>
+        </span>
+      </div>
+      <div class="window-body">
+        <h2>Featured Projects</h2>
+        <div class="projects">
+          <article class="project-card">
+            <h3>Project One</h3>
+            <p>Briefly explain what it does, what you built, and why it matters. Add a live demo or GitHub link.</p>
+            <a href="#">View project</a>
+            <div class="tag-row">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Project Two</h3>
+            <p>Use this for a school project, automation script, data project, modding tool, or cybersecurity/forensics writeup.</p>
+            <a href="#">View project</a>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">CLI</span>
+              <span class="tag">Docs</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Project Three</h3>
+            <p>Highlight the problem, your role, and the result. One sentence is better than a vague paragraph.</p>
+            <a href="#">View project</a>
+            <div class="tag-row">
+              <span class="tag">React</span>
+              <span class="tag">API</span>
+              <span class="tag">UI</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Project Four</h3>
+            <p>For GitHub Pages, static projects are easiest. Link directly to repos, demos, PDFs, or screenshots.</p>
+            <a href="#">View project</a>
+            <div class="tag-row">
+              <span class="tag">GitHub Pages</span>
+              <span class="tag">Portfolio</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="window">
+      <div class="title-bar">
+        <span>timeline.log</span>
+        <span class="window-buttons" aria-hidden="true">
+          <span class="window-button">×</span>
+        </span>
+      </div>
+      <div class="window-body">
+        <h2>Mini Timeline</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>2026 — Building the portfolio</strong>
+            Add current coursework, projects, and the kinds of roles you are targeting.
+          </div>
+          <div class="timeline-item">
+            <strong>2025 — Project milestone</strong>
+            Replace this with something specific: app, script, analysis, competition, or class project.
+          </div>
+          <div class="timeline-item">
+            <strong>Earlier — Started making things</strong>
+            Keep it short, human, and relevant.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="window" id="contact">
+      <div class="title-bar">
+        <span>contact.msg</span>
+        <span class="window-buttons" aria-hidden="true">
+          <span class="window-button">×</span>
+        </span>
+      </div>
+      <div class="window-body">
+        <h2>Contact</h2>
+        <p>
+          Want to reach me? Email <a href="mailto:your.email@example.com">your.email@example.com</a> or find me on GitHub.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Made with plain HTML/CSS/JS • Hosted on GitHub Pages</p>
+    </footer>
+  </main>
+
+  <div class="taskbar" aria-hidden="true">
+    <div class="start-button">Start</div>
+    <div class="task-pill">evan.exe — personal site</div>
+    <div class="clock" id="clock">--:--</div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const clock = document.getElementById('clock');
+      const now = new Date();
+      clock.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000 * 30);
+  </script>
+</body>
+</html>
