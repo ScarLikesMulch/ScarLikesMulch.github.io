@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A minimal Windows-inspired personal bio page." />
+  <title>Scar's Site</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/scar-favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar" aria-label="Page header">
+      <div class="brand">
+        <img class="brand-icon" src="assets/images/scar.svg" alt="" aria-hidden="true" />
+        <span>Scar's Site</span>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="intro-grid">
+        <article class="hero window sync-panel">
+          <div class="window-titlebar">
+            <span>introduction</span>
+            <div class="window-controls">
+              <button class="window-toggle" type="button" aria-label="Minimize introduction" aria-expanded="true">_</button>
+            </div>
+          </div>
+
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <h1>I'm <span>Scar</span> <span class="caret">^^</span></h1>
+              <dl class="hero-details">
+                <div>
+                  <dt>Age:</dt>
+                  <dd>22</dd>
+                </div>
+                <div>
+                  <dt>Location:</dt>
+                  <dd>USA</dd>
+                </div>
+                <div>
+                  <dt>Pronouns:</dt>
+                  <dd>Any</dd>
+                </div>
+                <div>
+                  <dt>Timezone:</dt>
+                  <dd>CST (Wake ~8:00am, Sleep ~11:00pm)</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <article class="window card intro-side-card sync-panel">
+          <div class="window-titlebar">
+            <span>site controls</span>
+            <div class="window-controls">
+              <button class="window-toggle" type="button" aria-label="Minimize site controls" aria-expanded="true">_</button>
+            </div>
+          </div>
+          <div class="window-body">
+            <div class="control-stack">
+              <label class="audio-control" for="music-volume">
+                <span>music volume</span>
+                <input id="music-volume" type="range" min="0" max="100" value="1" />
+                <output class="volume-readout" for="music-volume">1%</output>
+              </label>
+              <button class="button widget-control" type="button" data-widget-action="minimize">minimize all widgets</button>
+              <button class="button widget-control" type="button" data-widget-action="expand">expand all widgets</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <aside class="window card status-card">
+          <div class="window-titlebar">
+            <span>account users</span>
+            <div class="window-controls">
+              <button class="window-toggle" type="button" aria-label="Minimize account users" aria-expanded="true">_</button>
+            </div>
+          </div>
+          <div class="window-body">
+<dl class="status-list">
+  <div>
+    <dt>
+      <img class="account-logo" src="assets/images/riot.svg" alt="" aria-hidden="true" />
+      <span>Riot</span>
+    </dt>
+    <dd>Scar#2004</dd>
+  </div>
+
+  <div>
+    <dt>
+      <img class="account-logo" src="assets/images/steam.svg" alt="" aria-hidden="true" />
+      <span>Steam</span>
+    </dt>
+    <dd><a href="https://steamcommunity.com/id/seh2004/">Scar!</a></dd>
+  </div>
+
+  <div>
+    <dt>
+      <img class="account-logo discord-logo" src="assets/images/discord.svg" alt="" aria-hidden="true" />
+      <span>Discord</span>
+    </dt>
+    <dd><a href="https://discord.com/users/414273034317332480">scarlikesmulch</a></dd>
+  </div>
+
+  <div>
+    <dt>
+      <img class="account-logo" src="assets/images/youtube.svg" alt="" aria-hidden="true" />
+      <span>YouTube</span>
+    </dt>
+    <dd><a href="https://www.youtube.com/@Scarlikesmulch">Scarlikesmulch</a></dd>
+  </div>
+
+  <div>
+    <dt>
+      <img class="account-logo" src="assets/images/twitch.svg" alt="" aria-hidden="true" />
+      <span>Twitch</span>
+    </dt>
+    <dd><a href="https://www.twitch.tv/scarlikesmulch">Scarlikesmulch</a></dd>
+  </div>
+
+  <div>
+    <dt>
+      <img class="account-logo" src="assets/images/tiktok.svg" alt="" aria-hidden="true" />
+      <span>TikTok</span>
+    </dt>
+    <dd><a href="https://www.tiktok.com/@scar_isfj">scar_isfj</a></dd>
+  </div>
+
+</dl>
+          </div>
+        </aside>
+
+        <article id="likes" class="window card">
+          <div class="window-titlebar">
+            <span>things i enjoy</span>
+            <div class="window-controls">
+              <button class="window-toggle" type="button" aria-label="Minimize interests" aria-expanded="true">_</button>
+            </div>
+          </div>
+          <div class="window-body">
+            <ul class="tag-list">
+              <li>music</li>
+              <li>video games</li>
+              <li>anime</Dli>
+              <li>computer science</li>
+              <li>rabbit holes / ARGs</li>
+              <li>SFW + NSFW illustrations</li>
+              <li>tats + piercings</li>
+              <li>fem-presenting ppl</li>
+              <li>fitness + nutritional diet</li>
+              <li>minimalism (clearly)</li>
+            </ul>
+          </div>
+        </article>
+
+        <section class="split-grid">
+          <article class="window card split-card">
+            <div class="window-titlebar">
+              <span>favorite songs</span>
+              <div class="window-controls">
+                <button class="window-toggle" type="button" aria-label="Minimize favorite songs" aria-expanded="true">_</button>
+              </div>
+            </div>
+            <div class="window-body">
+              <iframe class="spotify-embed" data-testid="embed-iframe" src="https://open.spotify.com/embed/playlist/6WHrjYNRqKo1l9avvG6O95?utm_source=generator&theme=0" title="Favorite songs playlist" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </article>
+
+          <article class="window card split-card anonymous-message-card">
+            <div class="window-titlebar">
+              <span>anonymous message</span>
+              <div class="window-controls">
+                <button class="window-toggle" type="button" aria-label="Minimize ask me anything" aria-expanded="true">_</button>
+              </div>
+            </div>
+            <div class="window-body">
+              <p class="anonymous-message-copy">A form below to send me a message. I'll display each approved question and my answer to it below.</p>
+              <iframe class="tally-embed" data-tally-src="https://tally.so/embed/J9e1J7?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="217" frameborder="0" marginheight="0" marginwidth="0" title="anonymous message"></iframe>
+              <div class="anonymous-message-example">
+                <div class="anonymous-message-qa">
+                  <p><strong>Q:</strong> does ts really work</p>
+                  <p><strong>A:</strong> yeah</p>
+                </div>
+                <div class="anonymous-message-qa">
+                  <p><strong>Q:</strong> is this question necessary</p>
+                  <p><strong>A:</strong> yes, to have more lines so that I may test if my scroll works in this panel</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <article class="window card games-card">
+          <div class="window-titlebar">
+            <span>completed games</span>
+            <div class="window-controls">
+              <button class="window-toggle" type="button" aria-label="Minimize completed games" aria-expanded="true">_</button>
+            </div>
+          </div>
+          <div class="window-body">
+            <div class="game-tier-list" aria-label="Completed games tiered 1 to 10">
+              <section class="game-tier">
+                <h2>10</h2>
+                <ul>
+                  <li>Life is Strange</li>
+                  <li>Inscryption</li>
+                  <li>Celeste</li>
+                  <li>Enter the Gungeon</li>
+                  <li>Stardew Valley</li>
+                  <li>Terraria</li>
+                  <li>God of War (2018)</li>
+                  <li>God of War: Ragnarok</li>
+                  <li>Minecraft</li>
+                  <li>Control</li>
+                  <li>Slime Rancher</li>
+                  <li>Hades</li>
+                  <li>Outer Wilds</li>
+                  <li>inFAMOUS Second Son</li>
+                  <li>Resident Evil 8: Village</li>
+                  <li>Amnesia: The Dark Descent</li>
+                  <li>Sekiro: Shadows Die Twice</li>
+                  <li>Lies of P</li>
+                  <li>Undertale</li>
+                  <li>Hi-Fi RUSH</li>
+                  <li>ENA: Dream BBQ</li>
+                  <li>Elden Ring</li>
+                  <li>Cyberpunk 2077</li>
+                  <li>SIGNALIS</li>
+                  <li>Dispatch</li>
+                  <li>Cult of the Lamb</li>
+                  <li>Hollow Knight</li>
+                  <li>Clair Obscur: Expedition 33</li>
+                  <li>Katana ZERO</li>
+                  <li>Detroit: Become Human</li>
+                  <li>In Sound Mind</li>
+                  <li>The Beginner's Guide</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>9</h2>
+                <ul>
+                  <li>Slay the Princess</li>
+                  <li>Resident Evil 4 Remake</li>
+                  <li>Silent Hill 2 Remake</li>
+                  <li>Outlast</li>
+                  <li>Outlast 2</li>
+                  <li>Genshin Impact</li>
+                  <li>Stray</li>
+                  <li>Devil May Cry 5</li>
+                  <li>Ghostrunner</li>
+                  <li>Superliminal</li>
+                  <li>KinitoPET</li>
+                  <li>Oxenfree</li>
+                  <li>Firewatch</li>
+                  <li>Road 96</li>
+                  <li>IMSCARED</li>
+                  <li>Poppy Playtime</li>
+                  <li>The Wolf Among Us</li>
+                  <li>SOMA</li>
+                  <li>Laika: Aged Through Blood</li>
+                  <li>Mouthwashing</li>
+                  <li>Smile For Me</li>
+                  <li>Dredge</li>
+                  <li>Amnesia: The Bunker</li>
+                  <li>Valheim</li>
+                  <li>ATLYSS</li>
+                  <li>OneShot</li>
+                  <li>Cookie Clicker</li>
+                  <li>Please, Don't Touch Anything</li>
+                  <li>Risk of Rain 2</li>
+                  <li>Layers of Fear</li>
+                  <li>Dying Light</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>8</h2>
+                <ul>
+                  <li>Beyond: Two Souls</li>
+                  <li>Tales from the Borderlands</li>
+                  <li>The Elephant Collection</li>
+                  <li>Sea of Stars</li>
+                  <li>Just Cause 3</li>
+                  <li>Mirror's Edge Catalyst</li>
+                  <li>Castle Crashers</li>
+                  <li>Raft</li>
+                  <li>Hitman Series</li>
+                  <li>Portal</li>
+                  <li>Before Your Eyes</li>
+                  <li>Rogue: Genesia</li>
+                  <li>Resident Evil 2 Remake</li>
+                  <li>SUPERHOT VR</li>
+                  <li>Buckshot Roulette</li>
+                  <li>Five Nights at Freddy's: Security Breach</li>
+                  <li>Hypnospace Outlaw</li>
+                  <li>Dead Island 2</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>7</h2>
+                <ul>
+                  <li>&gt;observer_</li>
+                  <li>Burnout Paradise Remastered</li>
+                  <li>INSIDE</li>
+                  <li>GRIS</li>
+                  <li>Gone Home</li>
+                  <li>Broforce</li>
+                  <li>Indigo Park</li>
+                  <li>inFAMOUS First Light</li>
+                  <li>GORN</li>
+                  <li>Getting Over It with Bennett Foddy</li>
+                  <li>There Is No Game: Wrong Dimension</li>
+                  <li>Amnesia: A Machine for Pigs</li>
+                  <li>Ghostrunner 2</li>
+                  <li>Goat Simulator</li>
+                  <li>Little Nightmares 2</li>
+                  <li>A Short Hike</li>
+                  <li>Helltaker</li>
+                  <li>Milk Outside a Bag of Milk Outside a Bag of Milk</li>
+                  <li>Milk Inside a Bag of Milk Inside a Bag of Milk</li>
+                  <li>Adventure Capitalist</li>
+                  <li>Thief</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>6</h2>
+                <ul>
+                  <li>Doki Doki Literature Club</li>
+                  <li>Deepest Sword</li>
+                  <li>Emily is Away</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>4</h2>
+                <ul>
+                  <li>Bad Parenting 1: Mr. Red Face</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </article>
+
+        <article class="window card games-card">
+          <div class="window-titlebar">
+            <span>completed movies</span>
+            <div class="window-controls">
+              <button class="window-toggle" type="button" aria-label="Minimize completed movies" aria-expanded="true">_</button>
+            </div>
+          </div>
+          <div class="window-body">
+            <div class="game-tier-list" aria-label="Completed movies tiered 1 to 10">
+              <section class="game-tier">
+                <h2>10</h2>
+                <ul>
+                  <li>Iron Man</li>
+                  <li>Guardians of the Galaxy</li>
+                  <li>Doctor Strange</li>
+                  <li>Avengers: Infinity War</li>
+                  <li>Inception</li>
+                  <li>Sinners</li>
+                  <li>Zootopia</li>
+                  <li>The Prestige</li>
+                  <li>Puss in Boots: The Last Wish</li>
+                  <li>Project Hail Mary</li>
+                  <li>Interstellar</li>
+                  <li>Your Name.</li>
+                  <li>A Silent Voice</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>9</h2>
+                <ul>
+                  <li>Thor: Ragnarök</li>
+                  <li>Marvel's The First Avengers</li>
+                  <li>Iron Man 3</li>
+                  <li>Guardian's of the Galaxy Vol. 3</li>
+                  <li>The Autopsy of Jane Doe</li>
+                  <li>Hereditary</li>
+                  <li>Wreck it Ralph</li>
+                  <li>Scream</li>
+                  <li>Demon Slayer: Mugen Train</li>
+                  <li>A Whisker Away</li>
+                  <li>Howl's Moving Castle</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>8</h2>
+                <ul>
+                  <li>Iron Man 2</li>
+                  <li>Thor</li>
+                  <li>Captain America: The First Avenger</li>
+                  <li>Guardian's of the Galaxy Vol. 2</li>
+                  <li>Avengers: Endgame</li>
+                  <li>Deadpool &amp; Wolverine</li>
+                  <li>Zootopia 2</li>
+                  <li>The Ring</li>
+                  <li>Bubble</li>
+                  <li>Kuroko's Basketball Movie 4: Last Game</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>7</h2>
+                <ul>
+                  <li>The Incredible Hulk</li>
+                  <li>The Descent</li>
+                  <li>Blazing Saddles</li>
+                  <li>Words Bubble Up Like Soda Pop</li>
+                  <li>Ride Your Wave</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>6</h2>
+                <ul>
+                  <li>As Above So Below</li>
+                  <li>The Blair Witch Project</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>5</h2>
+                <ul>
+                  <li>Winnih the Pooh: Blood and Honey</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </article>
+
+        <article class="window card games-card">
+          <div class="window-titlebar">
+            <span>completed shows</span>
+            <div class="window-controls">
+              <button class="window-toggle" type="button" aria-label="Minimize completed shows" aria-expanded="true">_</button>
+            </div>
+          </div>
+          <div class="window-body">
+            <div class="game-tier-list" aria-label="Completed shows tiered 1 to 10">
+              <section class="game-tier">
+                <h2>10</h2>
+                <ul>
+                  <li>Arcane</li>
+                  <li>Breaking Bad</li>
+                  <li>The Office</li>
+                  <li>Soul Eater</li>
+                  <li>Haikyu!!</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>9</h2>
+                <ul>
+                  <li>Loki</li>
+                  <li>Fallout</li>
+                  <li>Castlevania</li>
+                  <li>Kuroko's Basketball</li>
+                  <li>Fire Force</li>
+                  <li>Dororo</li>
+                  <li>Cyberpunk: Edgerunners</li>
+                  <li>Your Lie in April</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>8</h2>
+                <ul>
+                  <li>White Collar</li>
+                  <li>No Game No Life</li>
+                  <li>The God of Highschool</li>
+                  <li>Parasyte</li>
+                  <li>Kakeguri</li>
+                  <li>Dexter</li>
+                  <li>Utopia</li>
+                </ul>
+              </section>
+
+              <section class="game-tier">
+                <h2>7</h2>
+                <ul>
+                  <li>Fruits Basket 2001</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </main>
+  </div>
+
+  <audio id="site-music" src="assets/audio/site-music.mp3" loop preload="auto" autoplay></audio>
+  <script src="script.js"></script>
+</body>
+</html>
