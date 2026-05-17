@@ -748,6 +748,76 @@ details p {
   font-weight: 900;
 }
 
+.updates-ticker {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 30;
+  width: min(var(--max-width), calc(100vw - 24px));
+  min-height: 44px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--chrome);
+  border: 2px solid var(--line);
+  border-bottom: 0;
+  --ticker-label-width: 110px;
+}
+
+.updates-ticker::before {
+  content: "updates";
+  position: relative;
+  z-index: 2;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  flex: 0 0 var(--ticker-label-width);
+  padding: 0 12px;
+  color: var(--paper);
+  background: var(--ink);
+  border-right: 2px solid var(--line);
+  font: 900 0.75rem "Courier New", monospace;
+  text-transform: uppercase;
+}
+
+.updates-ticker-track {
+  position: absolute;
+  inset: 0 0 0 var(--ticker-label-width);
+  z-index: 1;
+  flex: 0 0 max-content;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  min-width: 0;
+  animation: ticker-scroll 28s linear infinite;
+}
+
+.updates-ticker p {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0 28px;
+  white-space: nowrap;
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.updates-ticker:hover .updates-ticker-track,
+.updates-ticker:focus-within .updates-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .footer-bar {
   position: fixed;
   left: 50%;
@@ -862,6 +932,10 @@ details p {
   .footer-bar {
     width: 100%;
   }
+
+  .updates-ticker {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -893,6 +967,20 @@ details p {
   .footer-task {
     display: none !important;
   }
+
+  .updates-ticker::before {
+    flex-basis: 86px;
+    padding: 0 8px;
+  }
+
+  .updates-ticker {
+    --ticker-label-width: 86px;
+  }
+
+  .updates-ticker p {
+    padding: 0 20px;
+    font-size: 0.78rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -902,5 +990,18 @@ details p {
 
   * {
     transition: none !important;
+  }
+
+  .updates-ticker-track {
+    width: 100%;
+    animation: none;
+  }
+
+  .updates-ticker p {
+    white-space: normal;
+  }
+
+  .updates-ticker p[aria-hidden="true"] {
+    display: none;
   }
 }
