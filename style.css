@@ -15,6 +15,7 @@
   --chrome-dark: #0a0a0a;
   --chrome-light: #3b3b3b;
   --line: #4c4c4c;
+  --caution: #ff2a2a;
   --shadow: rgba(0, 0, 0, 0.45);
   --radius: 0;
   --font-main: Tahoma, Verdana, Arial, sans-serif;
@@ -791,7 +792,7 @@ details p {
   align-items: center;
   width: max-content;
   min-width: 0;
-  animation: ticker-scroll 28s linear infinite;
+  animation: ticker-scroll 24s linear infinite;
 }
 
 .updates-ticker p {
@@ -799,6 +800,7 @@ details p {
   margin: 0;
   padding: 0 28px;
   white-space: nowrap;
+  color: var(--caution);
   font-size: 0.84rem;
   font-weight: 900;
 }
